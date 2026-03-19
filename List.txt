@@ -1,10 +1,7 @@
-! Title: Minimal YouTube UI
-! Description: A uBlock filter List for a minimal YouTube UI
-! Homepage: https://github.com/PhilG2/minimal-youtube-ui
-! Sync: https://raw.githubusercontent.com/PhilG2/minimal-youtube-ui/refs/heads/main/List.txt
-! Expires: 1 days
 
-!Startpage Sidebar
+!Startpage
+
+!Sidebar
 !Home
 youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(1)
 !Subs
@@ -24,6 +21,7 @@ youtube.com###guide-links-primary
 youtube.com###guide-links-secondary
 
 
+
 !Startpage Header
 youtube.com###voice-search-button
 youtube.com###buttons > ytd-button-renderer
@@ -37,19 +35,37 @@ youtube.com###header.ytd-rich-grid-renderer
 youtube.com##.with-chipbar:style(clip-path: inset(0 0 50% 0) !important;)
 
 
-!Video Player recommendations 
-youtube.com###secondary
+
+!Below video player
+
+!action bar 
+!Gemini
+youtube.com###flexible-item-buttons > yt-button-view-model.ytd-menu-renderer:nth-of-type(1)
+!Save
+!youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
+!Join
+youtube.com###sponsor-button
+
+!Gemini in description
+youtube.com##.ytVideoDescriptionYouchatSectionViewModelHost
+youtube.com###video-summary
 
 !Comments
 !youtube.com###comments
 
-!Autoplay
-youtube.com##.delhi-fast-follow-autonav-toggle.ytp-autonav-toggle.ytp-button
+!recommendations/related content (Queue and transcript are bundeled into this aswell)
+youtube.com###secondary
+
+!to use Queue/Transcript instead: enable ###secondary and disable ###related
+!youtube.com###related
+
+
+!In Video Player
 
 !In Video Player recommendations
-!youtube.com##.ytp-fullscreen-grid
-!keep gradient visible since scrolling can't be blocked — avoids feeling broken
-youtube.com##.ytp-fullscreen-grid-stills-container
+youtube.com##.ytp-fullscreen-grid
+!if issues try with some blocking, havn't found any other usage of that div name but who knows
+!youtube.com##.ytp-fullscreen-grid-stills-container
 
 
 
@@ -57,8 +73,15 @@ youtube.com##.ytp-fullscreen-grid-stills-container
 !All actions
 !youtube.com##yt-player-quick-action-buttons
 !per action rule
-youtube.com##like-button-view-model
-youtube.com##dislike-button-view-model
+youtube.com##yt-player-quick-action-buttons like-button-view-model
+youtube.com##yt-player-quick-action-buttons dislike-button-view-model
 !youtube.com##button-view-model.ytSpecButtonViewModelHost [aria-label="Comments"]
-youtube.com##button-view-model.ytSpecButtonViewModelHost [aria-label="Share"]
-youtube.com##button-view-model.ytSpecButtonViewModelHost [aria-label="Ask"]
+youtube.com##yt-player-quick-action-buttons button-view-model.ytSpecButtonViewModelHost [aria-label="Share"]
+youtube.com##yt-player-quick-action-buttons button-view-model.ytSpecButtonViewModelHost [aria-label="Ask"]
+
+!next previous
+youtube.com##.ytp-playlist-ui.ytp-button.ytp-next-button
+youtube.com##.ytp-playlist-ui.ytp-button.ytp-prev-button
+
+!Autoplay
+youtube.com##.delhi-fast-follow-autonav-toggle.ytp-autonav-toggle.ytp-button
