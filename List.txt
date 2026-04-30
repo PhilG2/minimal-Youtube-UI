@@ -84,8 +84,10 @@ youtube.com##yt-player-quick-action-buttons button-view-model.ytSpecButtonViewMo
 youtube.com##yt-player-quick-action-buttons button-view-model.ytSpecButtonViewModelHost [aria-label="Ask"]
 
 !next previous
-youtube.com##.ytp-playlist-ui.ytp-button.ytp-next-button
-youtube.com##.ytp-playlist-ui.ytp-button.ytp-prev-button
+youtube.com#.ytp-button.ytp-prev-button
+!got renamed or there are two elements for the same thing
+!youtube.com##.ytp-playlist-ui.ytp-button.ytp-next-button
+!youtube.com##.ytp-playlist-ui.ytp-button.ytp-prev-button
 
 !Autoplay
 youtube.com##.delhi-fast-follow-autonav-toggle.ytp-autonav-toggle.ytp-button
